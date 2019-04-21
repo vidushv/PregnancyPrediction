@@ -1,0 +1,49 @@
+import requests, json
+import os
+import sys
+import time
+import json
+import requests
+
+'''
+    TODO:
+        1. Pass features as an argument
+        2. Pass object name as an argument
+
+        https://docs.microsoft.com/en-us/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=csharp
+'''
+
+features = {
+    "ID": "the cow id to which the row of data corresponds",
+    "DATB_i": "ith breeding date",
+    "DIMB_i": "days in milk on ith breeding date",
+    "LACT" : "Number of days in lactation",
+    "YIELD" : "Milk yield",
+    "FAT" : "fat content in the milk",
+    "PROTEIN" : "protein content in the milk",
+    "LACTOSE": "Lactose content in milk",
+    "THI" : "Temperature Humidity Index"
+}
+
+def main(argv):
+    trigger_url = 'http://20.42.35.233:80/score'
+
+    testData = {
+       "DATB_i": 446,
+       "DIMB_i": 2233,
+       "FAT": 247,
+       "YEILD": 651,
+       "LACTOSE": 793,
+       "PROTEIN": 4440,
+       "THI": 683.4889299143,
+       "LACT": 339
+    }
+
+    headers = {'Content-Type':'application/json'}
+    resp = requests.post(trigger_url, json=testData, headers=headers)
+
+    print("POST to url", trigger_url)
+    print("prediction:", resp.text)
+
+if __name__ == "__main__":
+    main(sys.argv)
