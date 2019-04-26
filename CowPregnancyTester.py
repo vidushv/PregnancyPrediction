@@ -26,7 +26,7 @@ features = {
 }
 
 def main(argv):
-    trigger_url = 'http://20.42.35.233:80/score'
+    trigger_url = 'http://52.190.26.253:80/score'
 
     testData = {
        "DATB_i": 446,
