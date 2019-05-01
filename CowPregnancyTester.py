@@ -26,7 +26,9 @@ features = {
 }
 
 def main(argv):
-    trigger_url = 'http://52.190.26.253:80/score'
+
+    trigger_url = 'https://cowpregpedictor.azurewebsites.net/api/predictionTrigger?code=6wJ58iIIT5IbG5dUHd1QkvNjWTcnt8XwX3wmvTKgcbD2aMJkC3dHkA=='
+
 
     testData = {
        "DATB_i": 446,
