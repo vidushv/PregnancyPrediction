@@ -4,6 +4,7 @@ import sys
 import time
 import json
 import requests
+import statistics
 
 '''
     TODO:
@@ -40,12 +41,18 @@ def main(argv):
        "THI": 683.4889299143,
        "LACT": 339
     }
-
-    headers = {'Content-Type':'application/json'}
-    resp = requests.post(trigger_url, json=testData, headers=headers)
-
-    print("POST to url", trigger_url)
-    print("prediction:", resp.text)
+    lis = []
+    for i in range(0,50):
+        startTime = time.time()
+        headers = {'Content-Type':'application/json'}
+        resp = requests.post(trigger_url, json=testData, headers=headers)
+        endTime = time.time()
+        lis.append(endTime-startTime)
+        #print(i)
+        #print("POST to url", trigger_url)
+        #print("prediction:", resp.text)
+    print("Standard Deviation of sample is % s " % (statistics.stdev(lis)))
+    print("Mean of sample is % s " % (statistics.mean(lis)))
 
 if __name__ == "__main__":
     main(sys.argv)
