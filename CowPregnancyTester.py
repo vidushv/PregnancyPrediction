@@ -30,16 +30,14 @@ def main(argv):
     trigger_url = 'https://cowpregpedictor.azurewebsites.net/api/predictionTrigger?code=6wJ58iIIT5IbG5dUHd1QkvNjWTcnt8XwX3wmvTKgcbD2aMJkC3dHkA=='
 
 
+
     testData = {
-       "DATB_i": 446,
-       "DIMB_i": 2233,
-       "FAT": 247,
-       "YEILD": 651,
-       "LACTOSE": 793,
-       "PROTEIN": 4440,
-       "THI": 683.4889299143,
-       "LACT": 339
+        "daily_prod": 41,
+        "lact_d": 34,
+        "lact_n": 1,
+        "lbd_d": 12,
     }
+
 
     headers = {'Content-Type':'application/json'}
     resp = requests.post(trigger_url, json=testData, headers=headers)
