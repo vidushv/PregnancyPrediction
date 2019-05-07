@@ -29,16 +29,12 @@ def main(argv):
     trigger_url = 'https://functions-vivid.azurewebsites.net/api/HttpTrigger1?code=I3VJhugK6llvTNwAcNc53tRasmK/qKR0EXnOTccdc0Xcaw251w/bCw=='
 
     payload = {
-        "ID": 2,
-        "DATB_i": 20180704,
-        "DIMB_i":91,
-        "LACT": 5,
-        "YIELD": 1178,
-        "FAT": 3.49,
-        "PROTEIN": 7.11,
-        "LACTOSE": 3.19,
-        "THI": 91.5, # <- Change this as it is calculated
-        "PREG": True
+        "ID": 12731,
+        "lact_d": 10.0,
+        "lact_n":10,
+        "lbd_d": 64,
+        "daily_prod": 12.31,
+        "label": 0,
     }
 
 
