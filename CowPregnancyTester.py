@@ -4,6 +4,7 @@ import sys
 import time
 import json
 import requests
+import statistics
 
 '''
     TODO:
@@ -44,6 +45,7 @@ def main(argv):
 
     print("POST to url", trigger_url)
     print("prediction:", resp.text)
+
 
 if __name__ == "__main__":
     main(sys.argv)
