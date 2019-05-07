@@ -13,7 +13,7 @@ def getSearch():
     t.start()
 
 def insert_entry_fields():
-   Label(master, text= '                           ...                           ', font='Arial 11 bold',fg='grey', anchor='center').grid(row=8)
+   Label(master, text= '                                          ...                                          ', font='Arial 11 bold',fg='grey', anchor='center').grid(row=8)
    print("Trying to test cow pregnancy:", (e1.get(), e2.get(), e3.get(), e4.get(), e5.get(), e6.get()))
 
    cowId = e1.get()
